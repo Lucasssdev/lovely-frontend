@@ -1,0 +1,59 @@
+{
+    "ptBr": {
+      "collapseMenu": "Recolher menu",
+      "preferencies": "Preferências",
+      "notifications": "Notificações",
+      "magicButton": "Cadastro Mágico",
+      "contacts": "Contatos",
+      "funnel": "Potenciais Clientes",
+      "schedule": "Agenda",
+      "proposal": "Propostas Comerciais",
+      "pagesForms": "Páginas e Formulários",
+      "signature": "Assinaturas",
+      "more": "Mais Recursos",
+      "myCompany": "Minha Empresa"
+    },
+    "ptPt": {      
+      "collapseMenu": "Colapsar menu",
+      "preferencies": "Preferências",
+      "notifications": "Notificações",
+      "magicButton": "Registo Mágico",
+      "contacts": "Contactos",
+      "funnel": "Potenciais Clientes",
+      "schedule": "Agenda",
+      "proposal": "Propostas Comerciais",
+      "pagesForms": "Páginas e Formulários",
+      "signature": "Assinaturas",
+      "more": "Mais Recursos",
+      "myCompany": "A Minha Empresa"
+    },
+
+    "en": {
+      "collapseMenu": "Collapse Menu",
+      "preferencies": "Preferences",
+      "notifications": "Notifications",
+      "magicButton": "Magic Register",
+      "contacts": "Contacts",
+      "funnel": "Potential Clients",
+      "schedule": "Schedule",
+      "proposal": "Business Proposals",
+      "pagesForms": "Pages and Forms",
+      "signature": "Signatures",
+      "more": "More Resources",
+      "myCompany": "My Company"
+    },
+    "es": {
+      "collapseMenu": "Colapsar Menú",
+      "preferencies": "Preferencias",
+      "notifications": "Notificaciones",
+      "magicButton": "Registro Mágico",
+      "contacts": "Contactos",
+      "funnel": "Clientes Potenciales",
+      "schedule": "Agenda",
+      "proposal": "Propuestas Comerciales",
+      "pagesForms": "Páginas y Formularios",
+      "signature": "Firmas",
+      "more": "Más Recursos",
+      "myCompany": "Mi Empresa"
+    }
+  }
