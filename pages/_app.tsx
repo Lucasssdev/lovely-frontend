@@ -19,22 +19,20 @@ type AppPropsWithLayout = AppProps & {
 }
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-    const getLayout = Component.getLayout ?? ((page) => page)
-
     return (
         <>
             <Head>
-                <title>Generic Project</title>
+                <title>Lucas&Lara</title>
                 <link rel="icon" href="logoSymbol.svg" />
                 <meta name="robots" content="noindex,nofollow" />
             </Head>
 
-            {getLayout(
+            {
                 <Theme>
                     <Layout />
                     <Component {...pageProps} />
                 </Theme>
-            )}
+            }
         </>
     )
 }
