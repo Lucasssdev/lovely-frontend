@@ -1,7 +1,7 @@
-import * as S from '../../styles/Home'
-import useController from '../../pagesControllers/home/controller'
+import * as S from '../styles/Home'
+import useController from '../pagesControllers/home/controller'
 import { faMars, faVenus, faHeart } from '@fortawesome/pro-solid-svg-icons'
-import HeartAnimation from '../../src/components/HeartAnimation'
+import HeartAnimation from '../src/components/HeartAnimation'
 export default function Home() {
     const controller = useController()
 
