@@ -42,7 +42,7 @@ const QUESTIONS: Record<ThemeName, string[]> = {
 }
 export default function useController() {
     const [timeTogether, setTimeTogether] = useState(0)
-
+    const amountPhotos = 11
     useEffect(() => {
         const start = new Date('2025-02-01T00:00:00').getTime()
         const update = () => setTimeTogether(Date.now() - start)
@@ -81,6 +81,7 @@ export default function useController() {
         timeTogether,
         selectedTheme,
         currentQuestion,
+        amountPhotos,
         breakdown,
         drawQuestion,
         setSelectedTheme,

@@ -22,9 +22,16 @@ interface ThemeInterface {
 }
 
 const GlobalStyle = createGlobalStyle<{ theme: ThemeInterface }>`
-  @import url('https://fonts.googleapis.com/css2?family=Love+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&family=Love+Light&display=swap');
 
-  
+  body {
+   margin: 0;
+   padding: 0;
+   height: 100vh;
+   width: 100vw;
+   background-color:  ${({ theme }) => theme.background.color.depthLevelOne};
+   
+  }
   *{
     margin: 0;
     box-sizing: border-box;
@@ -38,8 +45,9 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeInterface }>`
     }
   }
   p,span,div,button,body,li,td,th,ul {
-    font-family: 'Ubuntu', sans-serif;
-  
+  font-family: "Love Light", cursive;
+  font-weight: 400;
+  font-style: normal;  
   }
   
   :root {
