@@ -24,14 +24,7 @@ export const Container = styled.div`
         margin-bottom: 2rem;
     }
 `
-export const Carousel = styled.div`
-    display: flex;
-    //height: 500px;
-    gap: 1rem;
-    text-align: center;
-    // overflow: auto;
-    overflow-y: visible;
-`
+
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
@@ -53,6 +46,7 @@ export const Names = styled.img`
     background-position: center;
     background-repeat: no-repeat;
     object-fit: contain;
+    margin-top: 3rem;
 `
 
 export const CounterGrid = styled.div`

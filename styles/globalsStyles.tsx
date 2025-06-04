@@ -22,7 +22,7 @@ interface ThemeInterface {
 }
 
 const GlobalStyle = createGlobalStyle<{ theme: ThemeInterface }>`
-@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&family=Love+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&display=swap');
 
   body {
    margin: 0;
@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeInterface }>`
     }
   }
   p,span,div,button,body,li,td,th,ul {
-  font-family: "Love Light", cursive;
+  font-family: "Edu SA Hand", cursive;
   font-weight: 400;
   font-style: normal;  
   }
