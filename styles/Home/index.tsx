@@ -46,7 +46,7 @@ export const Names = styled.img`
     background-position: center;
     background-repeat: no-repeat;
     object-fit: contain;
-    margin-top: 3rem;
+    margin: 3rem 0;
 `
 
 export const CounterGrid = styled.div`
@@ -96,13 +96,9 @@ export const Declaration = styled.p`
 
 export const Marquee = styled.div`
     overflow: hidden;
-    //border: 1px solid red;
-    //background: black;
-    //min-height: 100%;
     width: 100%;
     mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    // margin-bottom: 2rem;
 `
 const marquee = keyframes`
   0% { transform: translateX(0); }
@@ -111,8 +107,6 @@ const marquee = keyframes`
 export const MarqueeInner = styled.div`
     display: flex;
     width: max-content;
-    //height: 100%;
-
     animation: ${marquee} 30s linear infinite;
 `
 export const Photo = styled.div<{ src: string }>`
@@ -127,7 +121,6 @@ export const Photo = styled.div<{ src: string }>`
 export const MarqueeGroup = styled.div`
     display: flex;
     height: 100%;
-
     width: 100%;
 `
 
@@ -151,7 +144,6 @@ export const ThemeBox = styled.button<{ active: boolean }>`
     border: 2px solid ${({ theme }) => theme.primary};
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: background 0.2s;
     &:hover {
         background: ${({ theme }) => theme.off};
     }
@@ -183,7 +175,6 @@ export const QuestionBox = styled.div`
     text-align: center;
 `
 
-/* --- Tabela de Comparativo --- */
 export const ComparisonTable = styled.table`
     width: 100%;
     border-collapse: collapse;
@@ -193,12 +184,9 @@ export const ComparisonTable = styled.table`
     margin-bottom: 2rem;
 `
 
-export const TableHead = styled.thead`
-    // background: ${({ theme }) => theme.secondary};
-`
+export const TableHead = styled.thead``
 
 export const TableRow = styled.tr`
-    /* Linha do cabeçalho já cuida da cor; para o body, alternar fundo */
     &:nth-child(odd) td {
         background: ${({ theme }) => theme.background.color.depthLevelTwo};
     }
@@ -206,9 +194,8 @@ export const TableRow = styled.tr`
         background: ${({ theme }) => theme.background.color.depthLevelOne};
     }
 
-    /* Efeito hover em cada linha do corpo da tabela */
     &:hover td {
-        background: ${({ theme }) => theme.off}80; /* 50% opacidade do “off” */
+        background: ${({ theme }) => theme.secondary}80;
     }
 `
 
@@ -232,6 +219,9 @@ export const TableCell = styled.td`
     white-space: pre-wrap;
     text-align: center;
 
+    &.isEmoji {
+        font-size: 1.8rem;
+    }
     &:last-child {
         border-right: none;
     }
