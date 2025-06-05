@@ -1,6 +1,6 @@
 import * as S from '../styles/Home'
 import useController from '../pagesControllers/home/controller'
-import { faMars, faVenus, faHeart } from '@fortawesome/pro-solid-svg-icons'
+import { faMars, faVenus, faHeart, faInfinity } from '@fortawesome/pro-solid-svg-icons'
 import HeartAnimation from '../src/components/HeartAnimation'
 export default function Home() {
     const controller = useController()
@@ -11,13 +11,13 @@ export default function Home() {
                 <S.MarqueeInner>
                     <S.MarqueeGroup>
                         {[...Array(controller.amountPhotos)].map((_, i) => {
-                            const photos = [1, 2, 3, , 910]
+                            const photos = [1, 2, 3, , 9, 10, 22, , 20, 27, 16]
                             if (photos.includes(i + 1)) return <S.Photo key={i} src={`/photo-${i + 1}.jpg`} />
                         })}
                     </S.MarqueeGroup>
                     <S.MarqueeGroup>
                         {[...Array(controller.amountPhotos)].map((_, i) => {
-                            const photos = [1, 2, 3, , 910]
+                            const photos = [1, 2, 3, , 9, 10, 22, , 20, 27, 16]
                             if (photos.includes(i + 1)) return <S.Photo key={i} src={`/photo-${i + 1}.jpg`} />
                         })}
                     </S.MarqueeGroup>
@@ -39,7 +39,7 @@ export default function Home() {
                     <strong>E é NOSSO 💑</strong>
                     <br />
                     <br />
-                    ♾️
+                    <S.Icon icon={faInfinity} color="var(--color-secondary)" iconSize="2rem" />
                     <br />
                     <br />
                     <strong>
@@ -91,13 +91,15 @@ export default function Home() {
                         <S.TableRow>
                             <S.TableHeader>
                                 <S.HeaderEmoji>
-                                    <S.Icon icon={faMars} color="var(--color-primary)" />
+                                    <S.Icon icon={faMars} color="var(--color-primary)" iconSize="2rem" />
                                 </S.HeaderEmoji>
                             </S.TableHeader>
-                            <S.TableHeader>VS</S.TableHeader>
+                            <S.TableHeader>
+                                <b>VS</b>
+                            </S.TableHeader>
                             <S.TableHeader>
                                 <S.HeaderEmoji>
-                                    <S.Icon icon={faVenus} color="var(--color-contrast)" />
+                                    <S.Icon icon={faVenus} color="var(--color-contrast)" iconSize="2rem" />
                                 </S.HeaderEmoji>
                             </S.TableHeader>
                         </S.TableRow>
@@ -115,20 +117,20 @@ export default function Home() {
                         </S.TableRow>
 
                         <S.TableRow>
-                            <S.TableCell>🏕️{/* natureza */}</S.TableCell>
+                            <S.TableCell className="isEmoji">🏕️{/* natureza */}</S.TableCell>
                             <S.TableCell>Lugar</S.TableCell>
-                            <S.TableCell>🏚️{/* cidade */}</S.TableCell>
+                            <S.TableCell className="isEmoji">🏚️{/* cidade */}</S.TableCell>
                         </S.TableRow>
 
                         <S.TableRow>
-                            <S.TableCell>🧀🍲 </S.TableCell>
+                            <S.TableCell className="isEmoji">🧀🍲 </S.TableCell>
                             <S.TableCell>Comida</S.TableCell>
-                            <S.TableCell>🥩🍫 </S.TableCell>
+                            <S.TableCell className="isEmoji">🥩🍫 </S.TableCell>
                         </S.TableRow>
                         <S.TableRow>
-                            <S.TableCell>🍉 </S.TableCell>
+                            <S.TableCell className="isEmoji">🍉 </S.TableCell>
                             <S.TableCell>Fruta</S.TableCell>
-                            <S.TableCell>🥝 </S.TableCell>
+                            <S.TableCell className="isEmoji">🥝 </S.TableCell>
                         </S.TableRow>
 
                         <S.TableRow>
@@ -144,27 +146,27 @@ export default function Home() {
                         </S.TableRow>
 
                         <S.TableRow>
-                            <S.TableCell>🎮</S.TableCell>
+                            <S.TableCell className="isEmoji">🎮</S.TableCell>
                             <S.TableCell>Hobby</S.TableCell>
-                            <S.TableCell>🎨</S.TableCell>
+                            <S.TableCell className="isEmoji">🎨</S.TableCell>
                         </S.TableRow>
 
                         <S.TableRow>
-                            <S.TableCell>❄️</S.TableCell>
+                            <S.TableCell className="isEmoji">❄️</S.TableCell>
                             <S.TableCell>Estação do ano</S.TableCell>
-                            <S.TableCell>☀️</S.TableCell>
+                            <S.TableCell className="isEmoji">☀️</S.TableCell>
                         </S.TableRow>
 
                         <S.TableRow>
-                            <S.TableCell>🐶{/* dog */}</S.TableCell>
+                            <S.TableCell className="isEmoji">🐶{/* dog */}</S.TableCell>
                             <S.TableCell>Pet</S.TableCell>
-                            <S.TableCell>🐶{/* dog */}</S.TableCell>
+                            <S.TableCell className="isEmoji">🐶{/* dog */}</S.TableCell>
                         </S.TableRow>
 
                         <S.TableRow>
-                            <S.TableCell>🥛{/* leite */}</S.TableCell>
+                            <S.TableCell className="isEmoji">🥛{/* leite */}</S.TableCell>
                             <S.TableCell>Bebida</S.TableCell>
-                            <S.TableCell>🍷{/* vinho */}</S.TableCell>
+                            <S.TableCell className="isEmoji">🍷{/* vinho */}</S.TableCell>
                         </S.TableRow>
 
                         <S.TableRow>
@@ -180,15 +182,15 @@ export default function Home() {
                         </S.TableRow>
 
                         <S.TableRow>
-                            <S.TableCell>🍔{/* hamburgueria */}</S.TableCell>
+                            <S.TableCell className="isEmoji">🍔{/* hamburgueria */}</S.TableCell>
                             <S.TableCell>Restaurante</S.TableCell>
-                            <S.TableCell>🍣{/* japonês */}</S.TableCell>
+                            <S.TableCell className="isEmoji">🍣{/* japonês */}</S.TableCell>
                         </S.TableRow>
                     </tbody>
                 </S.ComparisonTable>
                 <S.Line />
                 <S.Declaration>
-                    <S.MyLove>Meu amor,</S.MyLove> você mudou completamente minha maneira de ver o amor. Não pensei que um
+                    <S.MyLove>Meu amor</S.MyLove>, você mudou completamente minha maneira de ver o amor. Não pensei que um
                     sentimento pudesse ser tão intenso e tão natural ao mesmo tempo. 💖
                     <br />
                     <br />
@@ -206,7 +208,7 @@ export default function Home() {
                     Eu quero viver cada instante ao seu lado, e levar esse amor pela vida inteira. 💑❤️
                 </S.Declaration>
                 <S.Line />
-                <S.SubTitle>Nossas Fotos</S.SubTitle>
+                <S.SubTitle>Momentos</S.SubTitle>
                 <S.PhotoGrid>
                     {Array.from({ length: controller.amountPhotos }).map((_, index) => (
                         <S.PhotoItem key={index} src={`/photo-${index + 1}.jpg`} />
