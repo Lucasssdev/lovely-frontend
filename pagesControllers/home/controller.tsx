@@ -41,6 +41,7 @@ const QUESTIONS: Record<ThemeName, string[]> = {
     ],
 }
 export default function useController() {
+    const [startRender, setstartRender] = useState(false)
     const [timeTogether, setTimeTogether] = useState(0)
     const amountPhotos = 30
     useEffect(() => {
@@ -50,6 +51,31 @@ export default function useController() {
         const id = setInterval(update, 1000)
         return () => clearInterval(id)
     }, [])
+
+    useEffect(() => {
+        if (startRender) return
+        setstartRender(true)
+    }, [startRender])
+
+    const events = [
+        { date: 'Setembro', year: '2024', text: 'Nossos olhos se cruzaram pela primeira vez na missa — o início de tudo.' },
+        {
+            date: 'Outubro',
+            year: '2024',
+            text: 'Nos aproximamos com leveza, num passeio como amigos, mas com o coração curioso.',
+        },
+        { date: '29 Dezembro', year: '2024', text: 'Nosso primeiro beijo — o momento em que tudo fez ainda mais sentido.' },
+        { date: '30 Dezembro', year: '2024', text: 'Compartilhamos nossa primeira aventura juntos na Serra da Canastra.' },
+        {
+            date: '8 Janeiro',
+            year: '2025',
+            text: 'Vivemos um fim de semana mágico sob um céu estrelado que guardaremos pra sempre.',
+        },
+        { date: '19 Janeiro', year: '2025', text: 'A despedida na rodoviária foi difícil, mas cheia de promessas e amor.' },
+        { date: 'Fevereiro', year: '2025', text: 'Mesmo longe, firmamos nosso compromisso de namoro — forte e sincero.' },
+        { date: '19 Abril', year: '2025', text: 'O reencontro que provou que distância nenhuma apaga o que é verdadeiro.' },
+        { date: '12 Junho', year: '2025', text: 'Nosso primeiro Dia dos Namorados — só o começo de todos que ainda virão.' },
+    ]
 
     const breakdown = () => {
         const totalSeconds = Math.floor(timeTogether / 1000)
@@ -82,6 +108,8 @@ export default function useController() {
         selectedTheme,
         currentQuestion,
         amountPhotos,
+        startRender,
+        events,
         breakdown,
         drawQuestion,
         setSelectedTheme,
