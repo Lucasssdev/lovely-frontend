@@ -116,7 +116,7 @@ export default function Home() {
                         width="100%"
                         height="352"
                         frameBorder="0"
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        allow=" clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy"
                     ></iframe>
                 </S.Playlist>
