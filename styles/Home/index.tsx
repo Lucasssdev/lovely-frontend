@@ -438,6 +438,10 @@ export const TimelineDate = styled.div`
     margin-bottom: 0.5rem;
 
     white-space: nowrap;
+    > span {
+        color: var(--color-text-primary);
+        font-weight: 500;
+    }
 `
 
 export const TimelineText = styled.p`
