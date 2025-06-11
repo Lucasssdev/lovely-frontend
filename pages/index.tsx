@@ -156,7 +156,7 @@ export default function Home() {
                         <S.TableRow>
                             <S.TableCell className="isEmoji">🏕️{/* natureza */}</S.TableCell>
                             <S.TableCell>Lugar</S.TableCell>
-                            <S.TableCell className="isEmoji">🏚️{/* cidade */}</S.TableCell>
+                            <S.TableCell className="isEmoji">🏠{/* cidade */}</S.TableCell>
                         </S.TableRow>
 
                         <S.TableRow>
