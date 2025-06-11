@@ -100,7 +100,7 @@ export default function Home() {
                         <S.TimelineEvent key={i}>
                             <S.TimelineDot side={i % 2 === 0 ? 'left' : 'right'} />
                             <S.TimelineDate>
-                                <b>{event.year}</b> | {event.date}
+                                <b>{event.year}</b> <span>|</span> {event.date}
                             </S.TimelineDate>
                             <S.TimelineText>{event.text}</S.TimelineText>
                         </S.TimelineEvent>
@@ -114,7 +114,7 @@ export default function Home() {
                         className="iframe"
                         src="https://open.spotify.com/embed/playlist/4I5rPKPogPvjW94EGzbaul?utm_source=generator&theme=0"
                         width="100%"
-                        height="352"
+                        height="152"
                         frameBorder="0"
                         allow=" clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy"
