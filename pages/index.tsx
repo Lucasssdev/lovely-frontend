@@ -25,7 +25,7 @@ export default function Home() {
             </S.Marquee>
             <S.Content>
                 {/* nomes */}
-                <S.Names key={`names`} src="/names.png" />
+                <S.Names key={`names`} src="/names.png" start={controller.startRender} />
 
                 {/* declaração em texto */}
                 <S.Declaration>
@@ -42,14 +42,22 @@ export default function Home() {
                     <S.Icon icon={faInfinity} color="var(--color-secondary)" iconSize="2rem" />
                     <br />
                     <br />
-                    <strong>
-                        EU TE AMO PARA TODO O SEMPRE
-                        <br />
-                        <br />
-                        <S.Icon icon={faHeart} color="#ff2323" iconSize="2rem" />
-                    </strong>
+                    <S.AnimatedCard>
+                        <S.Loader>
+                            EU TE
+                            <S.Words>
+                                <S.Word>QUERO COMIGO 🌹</S.Word>
+                                <S.Word>AMO PARA SEMPRE ❤️</S.Word>
+                                <S.Word>ESCOLHO TODO DIA 💍</S.Word>
+                                <S.Word>LEVO NO MEU PEITO 🫀</S.Word>
+                                <S.Word>VEJO NO MEU FUTURO ✨</S.Word>
+                            </S.Words>
+                        </S.Loader>
+                    </S.AnimatedCard>
                 </S.Declaration>
+                <S.Icon icon={faHeart} color="#ff2323" iconSize="2rem" />
                 <S.Line />
+
                 {/* contador de tempo juntos */}
                 <S.SubTitle>Estamos juntos há:</S.SubTitle>
                 <S.CounterGrid>
@@ -67,7 +75,8 @@ export default function Home() {
                         </S.CounterBox>
                     ))}
                 </S.CounterGrid>
-                <S.Line />
+
+                {/* declaração em texto */}
                 <S.Declaration>
                     Nosso encontro não foi sorte, foi uma <br />
                     <strong>✨Deuscidência✨</strong> <br />
@@ -83,9 +92,37 @@ export default function Home() {
                     Se tivesse um único desejo, seria que você pudesse se ver do jeito que eu te vejo — porque aí você entenderia
                     exatamente por que eu amo tanto você 💕.
                 </S.Declaration>
-                <S.Line />
-                <S.SubTitle>Nossos Matches</S.SubTitle>
 
+                {/* linha do tempo */}
+                <S.SubTitle>Linha do Tempo</S.SubTitle>
+                <S.TimelineWrapper>
+                    {controller.events.map((event, i) => (
+                        <S.TimelineEvent key={i}>
+                            <S.TimelineDot side={i % 2 === 0 ? 'left' : 'right'} />
+                            <S.TimelineDate>
+                                <b>{event.year}</b> | {event.date}
+                            </S.TimelineDate>
+                            <S.TimelineText>{event.text}</S.TimelineText>
+                        </S.TimelineEvent>
+                    ))}
+                </S.TimelineWrapper>
+
+                {/* playlist */}
+                <S.SubTitle>Nossa Playlist</S.SubTitle>
+                <S.Playlist>
+                    <iframe
+                        className="iframe"
+                        src="https://open.spotify.com/embed/playlist/4I5rPKPogPvjW94EGzbaul?utm_source=generator&theme=0"
+                        width="100%"
+                        height="352"
+                        frameBorder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"
+                    ></iframe>
+                </S.Playlist>
+
+                {/* comparativo */}
+                <S.SubTitle>Nossos Matches</S.SubTitle>
                 <S.ComparisonTable>
                     <S.TableHead>
                         <S.TableRow>
@@ -188,7 +225,8 @@ export default function Home() {
                         </S.TableRow>
                     </tbody>
                 </S.ComparisonTable>
-                <S.Line />
+
+                {/* Declaration */}
                 <S.Declaration>
                     <S.MyLove>Meu amor</S.MyLove>, você mudou completamente minha maneira de ver o amor. Não pensei que um
                     sentimento pudesse ser tão intenso e tão natural ao mesmo tempo. 💖
@@ -207,33 +245,14 @@ export default function Home() {
                     <br />
                     Eu quero viver cada instante ao seu lado, e levar esse amor pela vida inteira. 💑❤️
                 </S.Declaration>
-                <S.Line />
+
+                {/* Moments */}
                 <S.SubTitle>Momentos</S.SubTitle>
                 <S.PhotoGrid>
                     {Array.from({ length: controller.amountPhotos }).map((_, index) => (
                         <S.PhotoItem key={index} src={`/photo-${index + 1}.jpg`} />
                     ))}
                 </S.PhotoGrid>
-
-                {/* 🎲 Jogo de Perguntas */}
-                {/*     <S.GameTitle>Jogo de Perguntas</S.GameTitle>
-                <S.ThemesGrid>
-                    {controller.themes.map((theme) => (
-                        <S.ThemeBox
-                            key={theme}
-                            active={controller.selectedTheme === theme}
-                            onClick={() => controller.setSelectedTheme(theme)}
-                        >
-                            {theme}
-                        </S.ThemeBox>
-                    ))}
-                </S.ThemesGrid>
-
-                <S.DrawButton disabled={!controller.selectedTheme} onClick={controller.drawQuestion}>
-                    Sortear pergunta
-                </S.DrawButton>
-
-                {controller.currentQuestion && <S.QuestionBox>{controller.currentQuestion}</S.QuestionBox>} */}
                 <HeartAnimation />
             </S.Content>
         </S.Container>

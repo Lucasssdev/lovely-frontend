@@ -37,7 +37,7 @@ export const Content = styled.div`
     text-align: center;
 `
 
-export const Names = styled.img`
+export const Names = styled.img<{ start: boolean }>`
     width: 100%;
     max-width: 500px;
     height: 100%;
@@ -47,6 +47,9 @@ export const Names = styled.img`
     background-repeat: no-repeat;
     object-fit: contain;
     margin: 3rem 0;
+    transform: ${({ start }) => (start ? 'translateY(0px) scale(1)' : 'translateY(100px) scale(0.5)')};
+    margin-top: ${({ start }) => (start ? '5rem' : '15rem')};
+    transition-duration: 2.5s;
 `
 
 export const CounterGrid = styled.div`
@@ -73,6 +76,23 @@ export const CounterBox = styled.div`
     justify-content: center;
 `
 
+export const Playlist = styled.div`
+    color: var(--bg-level-two);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+
+    .iframe {
+        border-radius: 12px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+`
 export const CounterValue = styled.span`
     font-size: 1.5rem;
     font-weight: bold;
@@ -204,11 +224,7 @@ export const TableHeader = styled.th`
     font-weight: 600;
     font-size: 1rem;
     padding: 0.75rem 1rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
     width: 100px;
-    &:last-child {
-        border-right: none;
-    }
 `
 
 export const TableCell = styled.td`
@@ -236,8 +252,14 @@ export const HeaderEmoji = styled.span`
     font-size: 1.4rem;
 `
 export const SubTitle = styled.p`
+    margin-top: 2rem;
     font-size: 1.4rem;
     font-weight: 700;
+    transition-duration: 500ms;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+    }
 `
 export const MyLove = styled.span`
     font-size: 1.5rem;
@@ -249,6 +271,7 @@ export const Line = styled.div`
     height: 3px;
     border-radius: 8px;
     background: var(--bg-level-max);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `
 
 export const Bullet = styled.span<{ color: string }>`
@@ -288,4 +311,138 @@ export const PhotoItem = styled.div<{ src: string }>`
 export const Icon = styled(FontAwesomeIcon)<{ color?: string; iconSize?: string }>`
     color: ${({ color }) => color || 'var(--text-primary)'};
     font-size: ${({ iconSize }) => iconSize || '1rem'};
+`
+const spin = keyframes`
+  10% {
+    transform: translateY(-102%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  35% {
+    transform: translateY(-202%);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  60% {
+    transform: translateY(-302%);
+  }
+  75% {
+    transform: translateY(-300%);
+  }
+  85% {
+    transform: translateY(-402%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+`
+
+export const AnimatedCard = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+`
+
+export const Loader = styled.div`
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 1rem;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    border-radius: 8px;
+    white-space: nowrap;
+`
+
+export const Words = styled.div`
+    overflow: hidden;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(var(--bg-color) 10%, transparent 30%, transparent 70%, var(--bg-color) 90%);
+        z-index: 20;
+    }
+`
+
+export const Word = styled.span`
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    padding-left: 10px;
+    color: #ffffff;
+    animation: ${spin} 12s infinite;
+    font-weight: 700;
+`
+
+export const TimelineWrapper = styled.div`
+    position: relative;
+    //  margin: 5rem auto;
+    // max-width: 900px;
+    padding: 2rem 0;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        border-radius: 8px;
+        background: var(--color-secondary);
+    }
+`
+
+export const TimelineEvent = styled.div`
+    position: relative;
+    width: 100%;
+    width: 50%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    &:nth-child(even) {
+        align-items: flex-start;
+        text-align: left;
+        left: 50%;
+    }
+`
+
+export const TimelineDot = styled.div<{ side: 'left' | 'right' }>`
+    content: '';
+    position: absolute;
+    top: 2.2rem;
+    left: ${({ side }) => (side === 'left' ? 'calc(100% - 8px)' : '-8px')};
+    // transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    z-index: 2;
+    &:nth-child(even) {
+        left: 0%;
+    }
+`
+
+export const TimelineDate = styled.div`
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+
+    white-space: nowrap;
+`
+
+export const TimelineText = styled.p`
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    width: 100%;
 `
